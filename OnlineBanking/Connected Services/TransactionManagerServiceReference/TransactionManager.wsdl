@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="TransactionManager" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53626/TransactionManager.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53626/TransactionManager.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITransactionManager_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_Deposit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Deposit" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_Deposit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_Withdrawal_InputMessage">
+    <wsdl:part name="parameters" element="tns:Withdrawal" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_Withdrawal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WithdrawalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_BillPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:BillPayment" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_BillPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BillPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_Transfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Transfer" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_Transfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_CalculateInterest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateInterest" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionManager_CalculateInterest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateInterestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITransactionManager">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactionManager/DoWork" message="tns:ITransactionManager_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactionManager/DoWorkResponse" message="tns:ITransactionManager_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Deposit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactionManager/Deposit" message="tns:ITransactionManager_Deposit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactionManager/DepositResponse" message="tns:ITransactionManager_Deposit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactionManager/Withdrawal" message="tns:ITransactionManager_Withdrawal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactionManager/WithdrawalResponse" message="tns:ITransactionManager_Withdrawal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BillPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactionManager/BillPayment" message="tns:ITransactionManager_BillPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactionManager/BillPaymentResponse" message="tns:ITransactionManager_BillPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactionManager/Transfer" message="tns:ITransactionManager_Transfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactionManager/TransferResponse" message="tns:ITransactionManager_Transfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInterest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactionManager/CalculateInterest" message="tns:ITransactionManager_CalculateInterest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactionManager/CalculateInterestResponse" message="tns:ITransactionManager_CalculateInterest_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITransactionManager" type="tns:ITransactionManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/ITransactionManager/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deposit">
+      <soap:operation soapAction="http://tempuri.org/ITransactionManager/Deposit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdrawal">
+      <soap:operation soapAction="http://tempuri.org/ITransactionManager/Withdrawal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayment">
+      <soap:operation soapAction="http://tempuri.org/ITransactionManager/BillPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <soap:operation soapAction="http://tempuri.org/ITransactionManager/Transfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInterest">
+      <soap:operation soapAction="http://tempuri.org/ITransactionManager/CalculateInterest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransactionManager">
+    <wsdl:port name="BasicHttpBinding_ITransactionManager" binding="tns:BasicHttpBinding_ITransactionManager">
+      <soap:address location="http://localhost:53626/TransactionManager.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,74 @@
+﻿@model BankOfBIT_KL.Models.Transaction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BankAccount.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankAccount.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionType.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransactionType.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransactionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deposit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deposit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Withdrawal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Withdrawal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransactionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
